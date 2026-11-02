@@ -1,0 +1,47 @@
+<!-- ATM Withdrawal System: Allow a user to withdraw money only 
+if the PIN is correct, the balance is sufficient, and the withdrawal amount is a multiple of ₹100. -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>ATM Withdrawal</h2>
+
+<label>Enter PIN:</label>
+<input type="text" id="pin"><br><br>
+
+<label>Enter Amount:</label>
+<input type="text" id="amount"><br><br>
+
+<button onclick="withdraw()">Withdraw</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function withdraw() {
+
+    let correctPin = 1234;
+    let balance = 5000;
+
+    let pin = Number(document.getElementById("pin").value);
+    let amount = Number(document.getElementById("amount").value);
+
+    if (pin == correctPin && amount <= balance && amount % 100 == 0) {
+
+        balance = balance - amount;
+
+        document.getElementById("result").innerHTML =
+            "Withdrawal Successful. Remaining Balance: ₹" + balance;
+
+    } else {
+
+        document.getElementById("result").innerHTML =
+            "Withdrawal Failed";
+
+    }
+}
+
+</script>
+
+</body>
+</html>

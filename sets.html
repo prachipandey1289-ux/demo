@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<body>
+    <script>
+      let number = new Set([10, 20, 30, 40]) ;
+      document.write([...number,"<br>"]); 
+      number.add(["Apple", "Banana", "Mango"]);
+      number.add("Orange");
+       number.delete(30);
+       document.write(number.has(50),"<br>");
+       document.write([...number,"<br>"]); 
+     let name  =  new Set([56,45,34,345,234]);
+     document.write(name.size);
+    </script>
+</body>
+</html>

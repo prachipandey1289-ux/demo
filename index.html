@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web application</title>
+    <style>
+body{
+    background-color: rgb(74, 32, 202);
+}
+div{
+    text-align: center;
+}
+
+h1{
+    background-color: chartreuse;
+
+}
+
+button{
+    background-color: aquamarine;
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 id="head">
+        ITS FIRST WEBSITE 
+    </h1>
+    <p>The Lion Was Big</p>
+    <button>Click Me</button>
+</div>
+
+ <script>
+    document.getElementById("head");
+    console.dir(head);
+   let first = document.querySelector("p");
+   console.dir(first);
+    console.log(first);
+    let h1 = document.querySelector("head");
+    console.log(head.innerText);
+    head.innerText = head.innerText+"  Hello World";
+
+
+</script>   
+</body>
+
+</html>

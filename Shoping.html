@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+</head>
+<body>
+    <label>Amount</label>
+    <input type="text" name="Enter Your Amount" id="amount">
+    <button onclick="checkamount()">Check</button>
+    <h2 id="price"></h2>
+    <script>
+        function checkamount(){
+   let a = Number(document.getElementById("amount").value);
+   let bill;
+   if(a>5000){
+    bill= "20% disscount";
+   }else if(a>3000){
+    bill = "10% disscount"
+   }else {
+    bill = "No Disscount";
+   }
+document.getElementById("price").innerHTML=bill;
+        }
+    </script>
+</body>
+</html>

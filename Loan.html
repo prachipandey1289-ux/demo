@@ -1,0 +1,49 @@
+<!-- Loan Approval System: Approve a loan only if the applicant meets specific conditions for age, monthly income, 
+credit score, and employment status. -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Loan Approval System</h2>
+
+<label>Age:</label>
+<input type="text" id="age"><br><br>
+
+<label>Monthly Income:</label>
+<input type="text" id="income"><br><br>
+
+<label>Credit Score:</label>
+<input type="text" id="score"><br><br>
+
+<label>Employment Status:</label>
+<input type="text" id="status"><br><br>
+
+<button onclick="checkLoan()">Check Loan</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function checkLoan() {
+
+    let age = Number(document.getElementById("age").value);
+    let income = Number(document.getElementById("income").value);
+    let score = Number(document.getElementById("score").value);
+    let status = document.getElementById("status").value;
+
+    if (age >= 21 && income >= 30000 && score >= 700 && status == "employed") {
+        
+        document.getElementById("result").innerHTML =
+        "Loan Approved";
+        
+            } else {
+        
+                document.getElementById("result").innerHTML =
+                    "Loan Rejected";
+            }
+}
+
+</script>
+
+</body>
+</html>

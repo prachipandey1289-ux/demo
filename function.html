@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // const summultiplication = (a,b) =>{
+    //     return a*b;
+    // };
+
+    // function constvowels(str) {
+    //     let count = 0;
+    //     for (const char of str) {
+    //         if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u") {
+    //             count++;
+    //         }
+    //     }
+    //     console.log(count);
+    // }
+//     let array = ["A","B"];
+// array.forEach((val, idx,array) => {
+// console.log(val.toUpperCase(),idx,array);
+// });
+
+// let array = [1,2,3,4,5];
+// array.forEach(num => {
+// console.log(num*num);
+// });
+
+// let nums = [1,2,3,4,5];
+// let newarr = nums.map((val) => {
+// return val * val;
+// });
+// console.log(newarr);
+// let arr = [9,8,7,54,2];
+// let ans=arr.filter((val) =>{
+//     return val % 2!==0 ;
+// });
+// console.log(ans);
+
+// let arr = [34,67,89,34,67];
+// let value = arr.reduce((res,curr) =>{
+// return res> curr ? res : curr;
+// });
+// console.log(value);
+// let marks = [67,78,98,44,56,98,99];
+// let student = marks.filter((num)=>{
+// return num > 90;
+// });
+// console.log(student);
+
+let n = prompt("enter a number");
+let arr= [];
+for(let i= 1; i<=n; i++){
+    arr[i-1]=i;
+}
+console.log(arr);
+let num=arr.reduce((n,p)=>{
+    return n+p;
+});
+console.log(num);
+console.log(arr);
+let pum=arr.reduce((n,p)=>{
+    return n*p;
+});
+console.log(pum);
+</script>
+
+</html>

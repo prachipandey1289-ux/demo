@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Strong Password Validator</h2>
+
+    <label>Enter Password:</label>
+    <input type="text" id="password" /required>
+
+    <button onclick="checkPassword()">Check</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+
+        function checkPassword() {
+            let password = document.getElementById("password").value;
+            let upper = false;
+            let lower = false;
+            let number = false;
+            let special = false;
+            if (password.length >= 8) {
+                for (let i = 0; i < password.length; i++) {
+                    let ch = password.charAt(i);
+                    if (ch >= "A" && ch <= "Z") {
+                        upper = true;                    
+                    }else if (ch >= "a" && ch <= "z") {
+                        lower = true;
+                    }else if (ch >= "0" && ch <= "9") {
+                        number = true;
+                    }else {
+                        special = true;
+                    }
+                }
+                if (upper && lower && number && special) {
+                    document.getElementById("result").innerHTML =
+                        "Strong Password";
+                }else {
+                    document.getElementById("result").innerHTML =
+                        "Weak Password";
+                }
+            }else {
+                document.getElementById("result").innerHTML =
+                    "Password must have at least 8 characters";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+2. Strong Password Validator: Check whether
+ a password contains an uppercase letter, lowercase letter, 
+ digit, special character, and at least 8 characters.
+<!-- 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+ </head>
+ <body>
+    <label>Password</label>
+    <input type="text"  id="password">  
+    <button onclick="checkPassword()">Check</button> 
+    <h2 id="result"></h2>
+    <script>
+        function checkPassword(){
+            let pwd = document.getElementById("password").value;
+            let uppercase;
+            let lowercase;
+            let digit;
+            let special;
+        if(pwd.lenth>=8){
+            for(let i=0; i>pwd.lenth; i++){
+                let ch;
+              if(ch>="A" && ch<="Z"){
+                uppercase= true;
+              }else if(ch>="a"&& ch<="z"){
+                lowercase = true;
+              }else if(ch >=0 && ch<=9){
+                digit =true;
+              }else {
+                special = true;
+              }
+            }if(uppercase && lowercase && digit && special){
+                document.getElementById("result").innerHTML="Continue";
+            }else{
+                document.getElementById("result").innerHTML="Incorrect";
+            }
+            else {
+                document.getElementById("result").innerHTML =
+                    "Password must have at least 8 characters";
+            }
+        }
+    }
+    </script> 
+ </body>
+ </html> -->

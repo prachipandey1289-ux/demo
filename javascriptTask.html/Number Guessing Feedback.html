@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing</title>
+</head>
+<body>
+    <script>
+        let  secret_number = 56;
+        let guessed_number =  34;
+        for(let i=1; i<=5; i++){
+            if(secret_number==guessed_number){
+                document.write("correct")
+            }else if(secret_number> guessed_number){
+                document.write("tohigh<br>")
+            }else {
+                document.write("tolow")
+            }
+        }
+    </script>
+</body>
+</html>

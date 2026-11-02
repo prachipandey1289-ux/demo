@@ -1,0 +1,152 @@
+<!-- 
+ <!-- Task 9: Student Utility App (Mini Project)
+Create a Student Utility App using HTML and JavaScript with the following features:
+1. Input field for the student's name.
+2. Input fields for three subject marks.
+3. A calculateResult() function.
+4. Display total marks and percentage.
+5. Display the student's grade.
+6. Display a Pass/Fail message.
+7. Calculate and display the average using a return value.
+8. Use an arrow function to display a personalized greeting. --> 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Utility App</title>
+</head>
+
+<body>
+
+    <h1>Student Utility App</h1>
+
+    <label>Student Name:</label>
+    <input type="text" id="studentname">
+
+    <br><br>
+
+    <label>Subject 1 Marks:</label>
+    <input type="number" id="marks1">
+
+    <br><br>
+
+    <label>Subject 2 Marks:</label>
+    <input type="number" id="marks2">
+
+    <br><br>
+
+    <label>Subject 3 Marks:</label>
+    <input type="number" id="marks3">
+
+    <br><br>
+
+    <button onclick="calculateResult()">Calculate Result</button>
+
+    <h2 id="greeting"></h2>
+    <p id="total"></p>
+    <p id="percentage"></p>
+    <p id="average"></p>
+    <p id="grade"></p>
+    <p id="status"></p>
+
+
+    <script>
+
+        function calculateResult() {
+
+
+            let name = document.getElementById("studentname").value;
+
+            let marks1 = Number(document.getElementById("marks1").value);
+
+            let marks2 = Number(document.getElementById("marks2").value);
+
+            let marks3 = Number(document.getElementById("marks3").value);
+
+
+            // Total
+            let total = marks1 + marks2 + marks3;
+
+
+            // Percentage
+            let percentage = (total / 300) * 100;
+
+
+            // Average
+            let average = calculateAverage(marks1, marks2, marks3);
+
+
+            // Grade
+            let grade;
+
+            if (percentage >= 90) {
+                grade = "A";
+            }
+            else if (percentage >= 80) {
+                grade = "B";
+            }
+            else if (percentage >= 70) {
+                grade = "C";
+            }
+            else if (percentage >= 60) {
+                grade = "D";
+            }
+            else {
+                grade = "F";
+            }
+
+
+           
+            let status;
+
+            if (marks1 >= 33 && marks2 >= 33 && marks3 >= 33) {
+                status = "Pass";
+            }
+            else {
+                status = "Fail";
+            }
+
+
+           
+            let greeting = greetStudent(name);
+
+
+            
+            document.getElementById("greeting").innerHTML = greeting;
+
+            document.getElementById("total").innerHTML =
+                "Total Marks: " + total + " / 300";
+
+            document.getElementById("percentage").innerHTML =
+                "Percentage: " + percentage.toFixed(2) + "%";
+
+            document.getElementById("average").innerHTML =
+                "Average: " + average.toFixed(2);
+
+            document.getElementById("grade").innerHTML =
+                "Grade: " + grade;
+
+            document.getElementById("status").innerHTML =
+                "Result: " + status;
+        }
+
+
+        function calculateAverage(a, b, c) {
+
+            let average = (a + b + c) / 3;
+
+            return average;
+        }
+
+
+
+        const greetStudent = (name) => {
+
+            return "Hello " + name + "! Welcome to Student Utility App.";
+
+        };
+
+    </script>
+
+</body>
+</html>
+    

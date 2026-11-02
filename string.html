@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // let str="prachipandey";
+    // console.log(str.slice(3,7));
+    // let str1 = "prachi";
+    // let str2 = "pandey";
+    // let res = str1 .concat(str2);
+    // console.log(res);
+    //   let str1 = "prachi\t";
+    // let str2 = "pandey";
+    // let res = " My Name Is "+str1+str2;
+    // console.log(res);
+    //   let str = "prachi";
+    //    console.log(str.replace("p","s"));//ontime match
+    //    let str = "prpacppphi";
+    //    console.log(str.replaceAll("p","s"));//all time match
+    //    let str = "prachi";
+    //    console.log(str.charAt(1));
+
+    //practice string
+    let username=prompt("username");
+    let fullname="@"+ username+ username.length;
+    console.log(fullname);
+
+</script>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project</title>
+
+</head>
+
+<body>
+
+    <body>
+
+        <h1>Student Utility App</h1>
+
+        <label>Student Name:</label>
+        <input type="text" id="studentName">
+        <br><br>
+
+        <label>Subject 1 Marks:</label>
+        <input type="number" id="mark1">
+        <br><br>
+
+        <label>Subject 2 Marks:</label>
+        <input type="number" id="mark2">
+        <br><br>
+
+        <label>Subject 3 Marks:</label>
+        <input type="number" id="mark3">
+        <br><br>
+
+        <button onclick="calculateStudentResult()">Calculate Result</button>
+        <h2 id="greeting"></h2>
+        <p id="total"></p>
+        <p id="percentage"></p>
+        <p id="average"></p>
+        <p id="grade"></p>
+        <p id="status"></p>
+
+       function calculateAverage(marks) {
+
+    let average = (marks[0] + marks[1] + marks[2]) / 3;
+
+    return average;
+}
+
+
+// Arrow Function
+const greetStudent = (name) => {
+
+    return "Hello " + name + "! Welcome to Student Utility App.";
+
+};
+
+
+function calculateResult() {
+
+    let name = document.getElementById("studentName").value;
+
+    let mark1 = Number(document.getElementById("mark1").value);
+    let mark2 = Number(document.getElementById("mark2").value);
+    let mark3 = Number(document.getElementById("mark3").value);
+
+
+    // Total
+    let total = mark1 + mark2 + mark3;
+
+
+    // Percentage
+    let percentage = (total / 300) * 100;
+
+
+    // Average using return value
+    let average = calculateAverage([mark1, mark2, mark3]);
+
+
+    // Grade
+    let grade;
+
+    if (percentage >= 90) {
+        grade = "A+";
+    }
+    else if (percentage >= 80) {
+        grade = "A";
+    }
+    else if (percentage >= 70) {
+        grade = "B";
+    }
+    else if (percentage >= 60) {
+        grade = "C";
+    }
+    else if (percentage >= 50) {
+        grade = "D";
+    }
+    else {
+        grade = "F";
+    }
+
+
+    // Pass / Fail
+    let status;
+
+    if (mark1 >= 33 && mark2 >= 33 && mark3 >= 33) {
+        status = "Pass";
+    }
+    else {
+        status = "Fail";
+    }
+
+
+    // Display output
+    document.getElementById("greeting").innerHTML =
+        greetStudent(name);
+
+    document.getElementById("total").innerHTML =
+        "Total Marks: " + total + " / 300";
+
+    document.getElementById("percentage").innerHTML =
+        "Percentage: " + percentage.toFixed(2) + "%";
+
+    document.getElementById("average").innerHTML =
+        "Average: " + average.toFixed(2);
+
+    document.getElementById("grade").innerHTML =
+        "Grade: " + grade;
+
+    document.getElementById("status").innerHTML =
+        "Result: " + status;
+}
+    </body>
+
+</html>
+

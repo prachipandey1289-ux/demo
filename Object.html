@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>name, age, course, and city.
+<body>
+    <script>1
+        // const student = {
+        //     name : "Prachi",
+        //     age : 34,
+        //     course :"TimePass",
+        //     city : "gajiyaBaad"
+        // }
+        // student.email="prachi@12345";
+        // console.log(student);
+1. 
+// 2. Create a Nested Object: Create a Company object 
+// containing an Employee object and an Address object. Access the
+//  company name, city, and pincode using object paths.
+        // 2
+        // const  company = {
+        //    name : "CodeatInfotech",
+        //    employee:{
+        //     ename :"Shruti"
+            
+        //    },
+        //      address:{
+        //     pincode : 394210,
+        //     city : "Surat" 
+        //    }
+        //          }
+        //          console.log(company.name);
+        //          console.log(company.employee.ename);
+        //          console.log(company.address.pincode);
+        // 3 Manage Object Properties: Create a Product object. Add, update,
+        //  and delete properties. Check whether the price property exists using the in operator
+        // const product = {
+        //     pname : "Musli",
+        //     price : 250,
+        //     Mrp: 399
+        // }
+        // product.name="Mango";
+        // product.price=230;
+        // delete product.pname;
+        // console.log("price" in product);    // {in} object return exisiting value true or false 
+        // console.log(product);
+
+        //4 Create a Bank Account: 
+        // Create a BankAccount object with deposit(), withdraw(), and 
+        // checkBalance() methods. Perform multiple transactions.
+//     const BankAccount = {
+//     name: "Elisha Chindrella",
+//     age: 34,
+//     balance: 10000,
+//     deposit: function(amount) {
+//         this.balance += amount;
+//     },
+//     withdraw: function(amount) {
+//         this.balance -= amount;
+//     },
+//     checkBalance: function() {
+//         console.log("Balance: " + this.balance);
+//     }
+// };
+// BankAccount.checkBalance();
+// BankAccount.deposit(5000);
+// BankAccount.checkBalance();
+// BankAccount.withdraw(3000);
+// BankAccount.checkBalance();
+
+// 5 Use the this Keyword: Create a 
+// Person object with firstName, lastName, and a fullName() method. Reuse 
+// the method with another object using call().
+const person = {
+    firstname : "Prachi",
+    lastname : "Pandey",
+     
+    fullName : function(){
+      fullName = "firstname"+""+"lastname";
+    }
+};
+console.log("fullName",person);
+    </script> 
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <script>
+        //  let n = 325;
+        //  if(n %2==0){
+        //     console.log("even");
+        //  }else{
+        //     console.log("odd");
+        //  }
+        // let marks = prompt("enter Your marks");
+        // let grade;
+        // if(marks>=90 && marks<=100){
+        //   grade ="A";
+        // }else if(marks>=70 && marks<=89){
+        //     grade= "B";
+        // }else if(marks>=60 && marks<=69){
+        //     grade = "c"
+        // }else if(marks>=50 && marks<=49){
+        //     grad = "D";
+        // }
+        // else {
+        //     grade ="F";
+        // }
+        // console.log(grade);
+
+        // let age = prompt("Enter your Age");
+        // if(age>=18){
+        //     console.log("You can Vote");
+        // }else {
+        //     console.log("You Can not Vote");
+        // }
+        //  let number = 100;
+        // //  console.log(number.toString());
+        // //  console.log(number.toFixed(2));
+        //  console.log(ParseInt());
+        // console.log(parseInt(number,2));
+
+        // let strToBool = 56;
+        // strToBool = Boolean(strToBool);
+        // console.log(strToBool, typeof strToBool);
+
+        //  let num = (a,b,c);
+        //  if(a>b && a>c ){
+        //    return a;
+        //  }else if(b>a && b>c){
+        //     return b;
+        //  }else {
+        //     return c;
+        //  }console.log(90,20,40);
+
+        const isLeapYear = (year) => {
+    if (year % 400 === 0) {
+        return true;
+    } 
+    else if (year % 4 === 0 && year % 100 !== 0) {
+        return true;
+    } 
+    else {
+        return false;
+    }
+};
+
+console.log(isLeapYear(2024));
+console.log(isLeapYear(2023));
+console.log(isLeapYear(1900));
+console.log(isLeapYear(2000));
+
+function electricityBill(units) {
+    let bill;
+
+    if (units <= 100) {
+        bill = units * 5;
+    }
+    else if (units <= 200) {
+        bill = (100 * 5) + ((units - 100) * 7);
+    }
+    else {
+        bill = (100 * 5) + (100 * 7) + ((units - 200) * 10);
+    }
+
+    return bill;
+}
+
+console.log(electricityBill(250));
+     
+
+
+
+// TASK 1: Check whether a number is Even or Odd
+
+
+function checkEvenOdd(num) {
+    if (num % 2 === 0) {
+        return "Even";
+    } else {
+        return "Odd";
+    }
+}
+
+console.log( checkEvenOdd(10));
+
+
+
+// TASK 2: Find the largest of three numbers
+
+
+function largest(a, b, c) {
+    if (a > b && a > c) {
+        return a;
+    } else if (b > a && b > c) {
+        return b;
+    } else {
+        return c;
+    }
+}
+
+console.log("Task 2:", largest(10, 25, 15));
+
+
+// =====================================================
+// TASK 3: Check Leap Year
+// =====================================================
+
+function isLeapYear(year) {
+    if (year % 400 === 0) {
+        return true;
+    } else if (year % 4 === 0 && year % 100 !== 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log( isLeapYear(2024));
+
+
+// =====================================================
+// TASK 4: Assign Grade based on Marks
+// =====================================================
+
+function calculateGrade(marks) {
+    if (marks >= 90) {
+        return "A";
+    } else if (marks >= 80) {
+        return "B";
+    } else if (marks >= 70) {
+        return "C";
+    } else if (marks >= 60) {
+        return "D";
+    } else {
+        return "F";
+    }
+}
+
+console.log( calculateGrade(85));
+
+
+// =====================================================
+// TASK 5: Voting Eligibility
+// =====================================================
+
+function checkVotingEligibility(age) {
+    if (age >= 18) {
+        return "Eligible to vote";
+    } else {
+        return "Not eligible to vote";
+    }
+}
+
+console.log( checkVotingEligibility(20));
+
+
+// =====================================================
+// TASK 6: Electricity Bill
+// 0-100   = ₹5/unit
+// 101-200 = ₹7/unit
+// 201+    = ₹10/unit
+// =====================================================
+
+function electricityBill(units) {
+    let bill;
+
+    if (units <= 100) {
+        bill = units * 5;
+    } else if (units <= 200) {
+        bill = (100 * 5) + ((units - 100) * 7);
+    } else {
+        bill = (100 * 5) + (100 * 7) + ((units - 200) * 10);
+    }
+
+    return bill;
+}
+
+console.log("Task 6:", electricityBill(250));
+
+
+// =====================================================
+// TASK 7: Strong Password
+// Uppercase + Lowercase + Digit + Special Character
+// =====================================================
+
+function checkPassword(password) {
+    if (
+        /[A-Z]/.test(password) &&
+        /[a-z]/.test(password) &&
+        /[0-9]/.test(password) &&
+        /[!@#$%^&*]/.test(password)
+    ) {
+        return "Strong Password";
+    } else {
+        return "Weak Password";
+    }
+}
+
+console.log("Task 7:", checkPassword("Prachi@123"));
+
+
+// =====================================================
+// TASK 8: Three-Digit Armstrong Number
+// =====================================================
+
+function isArmstrong(num) {
+    let original = num;
+    let sum = 0;
+
+    while (num > 0) {
+        let digit = num % 10;
+        sum = sum + digit ** 3;
+        num = Math.floor(num / 10);
+    }
+
+    if (sum === original) {
+        return "Armstrong Number";
+    } else {
+        return "Not Armstrong Number";
+    }
+}
+
+console.log("Task 8:", isArmstrong(153));
+
+
+// =====================================================
+// TASK 9: Prime Number
+// =====================================================
+
+function isPrime(num) {
+    if (num < 2) {
+        return false;
+    }
+
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log("Task 9:", isPrime(7));
+
+
+// =====================================================
+// TASK 10: BMI Calculator
+// =====================================================
+
+function calculateBMI(weight, height) {
+    let bmi = weight / (height * height);
+
+    if (bmi < 18.5) {
+        return "Underweight";
+    } else if (bmi < 25) {
+        return "Normal";
+    } else if (bmi < 30) {
+        return "Overweight";
+    } else {
+        return "Obese";
+    }
+}
+
+console.log("Task 10:", calculateBMI(60, 1.7));
+
+
+// =====================================================
+// TASK 11: Calculate Discount
+// ₹5000+ = 20%
+// ₹3000+ = 10%
+// ₹1000+ = 5%
+// Below 1000 = No discount
+// =====================================================
+
+function calculateDiscount(amount) {
+    if (amount >= 5000) {
+        return amount * 0.20;
+    } else if (amount >= 3000) {
+        return amount * 0.10;
+    } else if (amount >= 1000) {
+        return amount * 0.05;
+    } else {
+        return 0;
+    }
+}
+
+console.log("Task 11:", calculateDiscount(5000));
+
+
+// =====================================================
+// TASK 12: Login Credentials
+// =====================================================
+
+function login(username, password) {
+    let correctUsername = "prachi";
+    let correctPassword = "12345";
+
+    if (username === correctUsername && password === correctPassword) {
+        return "Login Successful";
+    } else {
+        return "Invalid Username or Password";
+    }
+}
+
+console.log("Task 12:", login("prachi", "12345"));
+
+
+// =====================================================
+// TASK 13: Second Largest of Three Numbers
+// =====================================================
+
+function secondLargest(a, b, c) {
+    if ((a > b && a < c) || (a > c && a < b)) {
+        return a;
+    } else if ((b > a && b < c) || (b > c && b < a)) {
+        return b;
+    } else {
+        return c;
+    }
+}
+
+console.log("Task 13:", secondLargest(10, 30, 20));
+
+
+// =====================================================
+// TASK 14: Nested Ternary - Largest of Three
+// =====================================================
+
+function largestTernary(a, b, c) {
+    return a > b
+        ? (a > c ? a : c)
+        : (b > c ? b : c);
+}
+
+console.log("Task 14:", largestTernary(10, 25, 15));
+
+
+// =====================================================
+// TASK 15: Loan Approval System
+// Income >= 50000
+// Age 21-60
+// Credit Score >= 700
+// Employment = employed
+// =====================================================
+
+function loanApproval(income, age, creditScore, employment) {
+    if (
+        income >= 50000 &&
+        age >= 21 &&
+        age <= 60 &&
+        creditScore >= 700 &&
+        employment === "employed"
+    ) {
+        return "Loan Approved";
+    } else {
+        return "Loan Rejected";
+    }
+}
+
+console.log(
+    "Task 15:",
+    loanApproval(60000, 30, 750, "employed")
+);
+
+
+// =====================================================
+// TASK 16: Number Converter
+// =====================================================
+
+function numberConverter(num) {
+    console.log("toString:", num.toString());
+    console.log("toFixed:", num.toFixed(2));
+    console.log("parseInt:", parseInt(num));
+    console.log("parseFloat:", parseFloat(num));
+    console.log("Number:", Number(num));
+}
+
+numberConverter(25.678);
+
+
+// =====================================================
+// TASK 17: Number Checker
+// =====================================================
+
+function numberChecker(value) {
+    console.log("Is Integer:", Number.isInteger(value));
+    console.log("Is NaN:", Number.isNaN(value));
+    console.log("Is Finite:", Number.isFinite(value));
+}
+
+numberChecker(10);
+
+
+// =====================================================
+// TASK 18: Bitwise Calculator
+// =====================================================
+
+function bitwiseCalculator(a, b) {
+    console.log("AND:", a & b);
+    console.log("OR:", a | b);
+    console.log("XOR:", a ^ b);
+    console.log("NOT:", ~a);
+    console.log("Left Shift:", a << b);
+    console.log("Right Shift:", a >> b);
+    console.log("Unsigned Right Shift:", a >>> b);
+}
+
+bitwiseCalculator(5, 2);
+
+
+// =====================================================
+// TASK 19: Student Result Calculator
+// =====================================================
+
+function calculateResult(mark1, mark2, mark3) {
+    let total = mark1 + mark2 + mark3;
+    let percentage = total / 3;
+    let grade;
+
+    if (percentage >= 90) {
+        grade = "A";
+    } else if (percentage >= 80) {
+        grade = "B";
+    } else if (percentage >= 70) {
+        grade = "C";
+    } else if (percentage >= 60) {
+        grade = "D";
+    } else {
+        grade = "F";
+    }
+
+    return {
+        total: total,
+        percentage: percentage,
+        grade: grade
+    };
+}
+
+console.log("Task 19:", calculateResult(85, 90, 80));
+
+
+// =====================================================
+// TASK 20: Temperature Converter
+// =====================================================
+
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9 / 5) + 32;
+}
+
+function fahrenheitToCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9;
+}
+
+console.log("Celsius to Fahrenheit:", celsiusToFahrenheit(30));
+console.log("Fahrenheit to Celsius:", fahrenheitToCelsius(86));
+
+
+// =====================================================
+// TASK 21: Calculator Using Functions
+// =====================================================
+
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function divide(a, b) {
+    if (b === 0) {
+        return "Cannot divide by zero";
+    }
+
+    return a / b;
+}
+
+console.log("Addition:", add(10, 5));
+console.log("Subtraction:", subtract(10, 5));
+console.log("Multiplication:", multiply(10, 5));
+console.log("Division:", divide(10, 5));
+
+
+// =====================================================
+// TASK 22: Arrow Functions
+// =====================================================
+
+const addArrow = (a, b) => a + b;
+
+const subtractArrow = (a, b) => a - b;
+
+const multiplyArrow = (a, b) => a * b;
+
+const divideArrow = (a, b) => a / b;
+
+console.log("Arrow Addition:", addArrow(10, 5));
+console.log("Arrow Subtraction:", subtractArrow(10, 5));
+console.log("Arrow Multiplication:", multiplyArrow(10, 5));
+console.log("Arrow Division:", divideArrow(10, 5));
+
+
+// =====================================================
+// TASK 23: Largest of Three Numbers
+// =====================================================
+
+function findLargest(a, b, c) {
+    if (a > b && a > c) {
+        return a;
+    } else if (b > a && b > c) {
+        return b;
+    } else {
+        return c;
+    }
+}
+
+console.log("Task 23:", findLargest(50, 20, 30));
+
+
+// =====================================================
+// TASK 24: Student Utility App - JavaScript Functions
+// =====================================================
+
+function calculateStudentResult(mark1, mark2, mark3) {
+
+    let total = mark1 + mark2 + mark3;
+    let percentage = total / 3;
+    let average = percentage;
+    let grade;
+
+    if (percentage >= 90) {
+        grade = "A";
+    } else if (percentage >= 80) {
+        grade = "B";
+    } else if (percentage >= 70) {
+        grade = "C";
+    } else if (percentage >= 60) {
+        grade = "D";
+    } else {
+        grade = "F";
+    }
+
+    let result;
+
+    if (percentage >= 40) {
+        result = "Pass";
+    } else {
+        result = "Fail";
+    }
+
+    return {
+        total: total,
+        percentage: percentage,
+        grade: grade,
+        result: result,
+        average: average
+    };
+}
+
+
+
+// Arrow function for personalized greeting
+
+const greeting = name => `Hello ${name}, welcome to the Student Utility App!`;
+
+console.log(greeting("Prachi"));
+
+console.log(
+    calculateStudentResult(80, 75, 90)
+);
+    </script>
+</body>
+
+</html>
+<!-- if(c>a  && c>b) -->
+<!-- Check whether a number is even or odd.
+
+Find the largest of three numbers using if-else.
+
+Check whether a year is a leap year.
+
+Assign grades to a student based on marks (A, B, C, D, F).
+
+Check whether a person is eligible to vote (18+).
+
+Calculate an electricity bill using different unit slabs.
+
+Validate a strong password (uppercase, lowercase, digit, special character).
+
+Check whether a three-digit number is an Armstrong number.
+
+Check whether a number is a prime number.
+
+Calculate BMI and classify it as Underweight, Normal, Overweight, or Obese.
+
+Calculate a discount based on purchase amount.
+
+Check whether login credentials match a predefined username and password.
+
+Find the second-largest of three numbers.
+
+Use a nested ternary operator to find the largest of three numbers.
+
+Build a loan approval system using income, age, credit score, and employment status. -->
+<!-- Task 1: Number Converter
+Create a program that takes a number from the user and displays its converted values using toString(), toFixed(2), parseInt(), parseFloat(), and Number().
+Task 2: Number Checker
+Create a program that checks whether the entered value is an integer, NaN, or a finite number using JavaScript Number methods.
+Task 3: Bitwise Calculator
+Create a program that takes two numbers from the user and performs the following bitwise operations:
+- Bitwise AND (&)
+- Bitwise OR (|)
+- Bitwise XOR (^)
+- Bitwise NOT (~)
+- Left Shift (<<)
+- Right Shift (>>)
+- Unsigned Right Shift (>>>)
+Task 4: Student Result Calculator
+Create a function named calculateResult(mark1, mark2, mark3) that calculates and returns the total marks, percentage, and grade of a student.
+Task 5: Temperature Converter
+Create reusable JavaScript functions to convert Celsius to Fahrenheit and Fahrenheit to Celsius.
+Task 6: Calculator Using Functions
+Create a calculator using HTML and JavaScript with separate functions for addition, subtraction, multiplication, and division. Each operation must have a separate button.
+Task 7: Arrow Functions
+Convert the addition, subtraction, multiplication, and division functions of the calculator into arrow functions and display the results.
+Task 8: Largest of Three Numbers
+Create a JavaScript function that accepts three numbers and returns the largest number.
+Task 9: Student Utility App (Mini Project)
+Create a Student Utility App using HTML and JavaScript with the following features:
+1. Input field for the student's name.
+2. Input fields for three subject marks.
+3. A calculateResult() function.
+4. Display total marks and percentage.
+5. Display the student's grade.
+6. Display a Pass/Fail message.
+7. Calculate and display the average using a return value.
+8. Use an arrow function to display a personalized greeting. --> -->
